@@ -9,7 +9,7 @@ output "usernames" {
 
 output "password" {
   value = {
-    for user,prifle in aws_iam_user_login_profile.users_profile.user : user => "Password created - user must reset on first login"
+    for user, profile in aws_iam_user_login_profile.users_profile.users : user => "Password created - user must reset on first login"
   } 
   sensitive = true
 }
