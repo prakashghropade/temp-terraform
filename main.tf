@@ -12,3 +12,13 @@ resource "aws_iam_user" "users" {
   }
 
 }
+
+resource "aws_iam_user_login_profile" "users_profile" {
+  for_each = aws_iam_user.users
+  user = each.value.name
+  password_reset_required = true
+
+  lifecycle {
+     ignore_changes = [ password_reset_required,password_length]
+  }
+}
