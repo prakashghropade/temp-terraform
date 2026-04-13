@@ -10,7 +10,7 @@ resource "aws_iam_group" "reception" {
 
 resource "aws_iam_group" "accounting" {
     name = "Accounting"
-    path = "/groups"
+    path = "/groups/"
 }
 
 resource "aws_iam_group_membership" "sales_mambers" {
