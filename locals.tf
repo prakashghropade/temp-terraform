@@ -1,4 +1,4 @@
 locals {
-     users = csvdecode(file("${path.module}/users/csv"))
+     users = csvdecode(file("users"))
 }
 
