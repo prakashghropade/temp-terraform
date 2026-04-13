@@ -8,5 +8,8 @@ output "usernames" {
 }
 
 output "password" {
-  value = aws_iam_user_login_profile.users_profile.encrypted_password
+  value = {
+    for user,prifle in aws_aws_iam_user_login_profile.users_profile.users : user => "Password created - user must reset on first login"
+  } 
+  sensitive = true
 }
